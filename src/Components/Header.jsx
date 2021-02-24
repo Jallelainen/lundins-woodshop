@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="row">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-inline-flex fixed-top">
@@ -9,12 +9,12 @@ const Header = () => {
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" onClick = {() => props.openFrontPage()}>
               Hem
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" onClick = {() => props.openProducts()}>
               Produkter
             </a>
           </li>

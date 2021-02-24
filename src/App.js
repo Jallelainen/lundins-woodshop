@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+//-------PICS-----------
+import woodshopPic from './Pics/Woodshop.jpg'
+import sundeckPic from './Pics/sundeck.jpg'
+import windowPic from './Pics/Window-Replacement.jpg'
+import furniturePic from './Pics/furniture-making.jpeg'
 //-------COMPONENTS-------
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -34,20 +39,37 @@ class App extends Component {
     showProducts: false,
   };
 
+  openProducts = () => {
+    this.setState({ showProducts: true, showSignIn: false, showSignUp: false })
+    
+  }
+
+  openFrontPage = () => {
+    this.setState({ showProducts: false, showSignIn: false, showSignUp: false })
+  }
+
   render() {
     const { productList, showProducts, showSignIn, showSignUp } = this.state;
 
+
     return (
       <div className="Container">
-        <Header />
+        <Header
+        openProducts={this.openProducts}
+        openFrontPage={this.openFrontPage}  />
         {showProducts ? (
-          <ProductGrid products={productList} />
+          <ProductGrid 
+          products={productList} />
         ) : showSignIn ? (
           <SignIn />
         ) : showSignUp ? (
           <SignUp />
         ) : (
-          <FrontPage />
+          <FrontPage 
+          woodshopPic={woodshopPic}
+          windowPic={windowPic}
+          sundeckPic={sundeckPic}
+          furniturePic={furniturePic}/>
         )}
         <Footer />
       </div>
