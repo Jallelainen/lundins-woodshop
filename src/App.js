@@ -4,6 +4,7 @@ import woodshopPic from './Pics/Woodshop.jpg'
 import sundeckPic from './Pics/sundeck.jpg'
 import windowPic from './Pics/Window-Replacement.jpg'
 import furniturePic from './Pics/furniture-making.jpeg'
+import stolPic from './Pics/trästol.jpg'
 //-------COMPONENTS-------
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -16,28 +17,102 @@ class App extends Component {
   state = {
     productList: [
       {
+        Id: 0,
         Name: "Trästol",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 2400,
       },
       {
+        Id: 1,
         Name: "Matbord",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 2100,
+      },
+      {
+        Id: 2,
+        Name: "Gungstol",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 3300,
+      },
+      {
+        Id: 3,
+        Name: "Spegel",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 890,
+      },
+      {
+        Id: 4,
+        Name: "Träbänk",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 2399,
+      },
+      {
+        Id: 5,
+        Name: "Handräcke",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 240,
+      },
+      {
+        Id: 6,
+        Name: "Trästol",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 2400,
       },
       {
+        Id: 7,
+        Name: "Matbord",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 2100,
+      },
+      {
+        Id: 8,
         Name: "Gungstol",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
-        Price: 2400,
+        Price: 3300,
+      },
+      {
+        Id: 9,
+        Name: "Spegel",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 890,
+      },
+      {
+        Id: 10,
+        Name: "Träbänk",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 2399,
+      },
+      {
+        Id: 11,
+        Name: "Handräcke",
+        Description:
+          "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
+        Price: 240,
       },
     ],
+    shoppingCart: [],
     showSignIn: false,
     showSignUp: false,
     showProducts: false,
   };
+
+  addToCart = (event) => {
+    const product = event.target;
+    this.setState({
+
+    })
+  }
 
   openProducts = () => {
     this.setState({ showProducts: true, showSignIn: false, showSignUp: false })
@@ -53,13 +128,14 @@ class App extends Component {
 
 
     return (
-      <div className="Container">
+      <div id="main-container">
         <Header
         openProducts={this.openProducts}
         openFrontPage={this.openFrontPage}  />
         {showProducts ? (
           <ProductGrid 
-          products={productList} />
+          products={productList}
+          stolPic={stolPic} />
         ) : showSignIn ? (
           <SignIn />
         ) : showSignUp ? (
@@ -69,7 +145,8 @@ class App extends Component {
           woodshopPic={woodshopPic}
           windowPic={windowPic}
           sundeckPic={sundeckPic}
-          furniturePic={furniturePic}/>
+          furniturePic={furniturePic}
+          />
         )}
         <Footer />
       </div>

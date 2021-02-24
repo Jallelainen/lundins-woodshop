@@ -3,18 +3,18 @@ import React from "react";
 const Header = (props) => {
   return (
     <div className="row">
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-inline-flex fixed-top">
+      <nav class="navbar navbar-expand-sm bg-dark shadow mb-4 navbar-dark d-inline-flex fixed-top">
         <a class="navbar-brand" href="#">
-          Lundin Trähantverk
+          <h2>Lundin Trähantverk</h2>
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" onClick = {() => props.openFrontPage()}>
+            <a class="nav-link" onClick={() => props.openFrontPage()}>
               Hem
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onClick = {() => props.openProducts()}>
+            <a class="nav-link" onClick={() => props.openProducts()}>
               Produkter
             </a>
           </li>
@@ -29,8 +29,8 @@ const Header = (props) => {
             </a>
           </li>
         </ul>
-        <ul className="nav navbar-nav navbar-right">
-        <li class="nav-item">
+        <ul className="nav navbar-nav ml-auto">
+          <li class="nav-item">
             <a class="nav-link" href="#">
               Logga in
             </a>

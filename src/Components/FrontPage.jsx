@@ -14,7 +14,7 @@ const FrontPage = (props) => {
           />
         </div>
         <div className="col-8">
-          <h4 className="mt-4 ml-2">Ett företag med anor</h4>
+          <h4 className="mt-4 ml-2">Ett företag med anor från svensk träindustri</h4>
           <p className="ml-2">
             Duis eget volutpat augue. Proin laoreet massa sem, eget vestibulum
             leo fermentum non. Morbi quam lectus, eleifend et imperdiet quis,
@@ -33,22 +33,22 @@ const FrontPage = (props) => {
           </p>
         </div>
       </div>
-      <hr />
+      <hr className="mb-5"/>
       <div className="row">
         <div className="col">
           <img className="rounded-circle mx-auto d-block shadow mb-4 bg-white" id="circlePics" src={props.furniturePic} alt="Furniture" />
-          <p>Våra handtillverkade möbler skapas med ett öga för detaljer.</p>
+          <p className="text-center">Våra handtillverkade möbler skapas med ett öga för detaljer.</p>
         </div>
         <div className="col">
           <img className="rounded-circle mx-auto d-block shadow mb-4 bg-white" id="circlePics" src={props.windowPic} alt="Windows" />
-          <p>
+          <p className="text-center">
             Med kunskap inom fönsterrenovering återställer vi dina gamla fönster
             till nyskick.
           </p>
         </div>
         <div className="col">
           <img className="mx-auto d-block rounded-circle shadow mb-4 bg-light" id="circlePics" src={props.sundeckPic} alt="Renovation" />
-          <p>
+          <p className="text-center">
             Vi utför gärna mindre byggnadsprojekt. Tveka inte att kontakta oss!
           </p>
         </div>
