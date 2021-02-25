@@ -1,13 +1,9 @@
 .spacer {
   margin: 45px;
 }
-#main-container {
-  min-height: 100vh;
-}
 
-.footer {
-  position: absolute;
-  bottom: 0;
+.nav-item a:hover{  
+    cursor: pointer 
 }
 
 #woodshopPic {

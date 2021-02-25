@@ -3,40 +3,40 @@ import React from "react";
 const Header = (props) => {
   return (
     <div className="row">
-      <nav class="navbar navbar-expand-sm bg-dark shadow mb-4 navbar-dark d-inline-flex fixed-top">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-sm bg-dark shadow mb-4 navbar-dark d-inline-flex fixed-top">
+        <a className="navbar-brand" href="#">
           <h2>Lundin Trähantverk</h2>
         </a>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" onClick={() => props.openFrontPage()}>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" onClick={() => props.openFrontPage()}>
               Hem
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" onClick={() => props.openProducts()}>
+          <li className="nav-item">
+            <a className="nav-link" onClick={() => props.openProducts()}>
               Produkter
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="#">
               Beställa
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" onClick={() => props.openAbout()}>
               Om oss
             </a>
           </li>
         </ul>
         <ul className="nav navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="#">
               Logga in
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="#">
               Skapa konto
             </a>
           </li>

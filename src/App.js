@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 //-------PICS-----------
-import woodshopPic from './Pics/Woodshop.jpg'
-import sundeckPic from './Pics/sundeck.jpg'
-import windowPic from './Pics/Window-Replacement.jpg'
-import furniturePic from './Pics/furniture-making.jpeg'
-import stolPic from './Pics/trästol.jpg'
+import woodshopPic from "./Pics/Woodshop.jpg";
+import sundeckPic from "./Pics/sundeck.jpg";
+import windowPic from "./Pics/Window-Replacement.jpg";
+import furniturePic from "./Pics/furniture-making.jpeg";
+import stolPic from "./Pics/trästol.jpg";
 //-------COMPONENTS-------
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -12,6 +12,7 @@ import ProductGrid from "./Components/ProductGrid";
 import FrontPage from "./Components/FrontPage";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
+import AboutUs from "./Components/AboutUs";
 
 class App extends Component {
   state = {
@@ -105,47 +106,73 @@ class App extends Component {
     showSignIn: false,
     showSignUp: false,
     showProducts: false,
+    showAbout: false,
   };
 
   addToCart = (event) => {
     const product = event.target;
-    this.setState({
+    this.setState({});
+  };
 
-    })
-  }
+  openAbout = () => {
+    this.setState({
+      showProducts: false,
+      showSignIn: false,
+      showSignUp: false,
+      showAbout: true,
+    });
+  };
 
   openProducts = () => {
-    this.setState({ showProducts: true, showSignIn: false, showSignUp: false })
-    
-  }
+    this.setState({
+      showSignIn: false,
+      showSignUp: false,
+      showAbout: false,
+      showProducts: true,
+    });
+  };
 
   openFrontPage = () => {
-    this.setState({ showProducts: false, showSignIn: false, showSignUp: false })
-  }
+    this.setState({
+      showProducts: false,
+      showSignIn: false,
+      showSignUp: false,
+      showAbout: false,
+    });
+  };
 
   render() {
-    const { productList, showProducts, showSignIn, showSignUp } = this.state;
-
+    const {
+      productList,
+      showProducts,
+      showSignIn,
+      showSignUp,
+      showAbout,
+    } = this.state;
 
     return (
       <div id="main-container">
         <Header
-        openProducts={this.openProducts}
-        openFrontPage={this.openFrontPage}  />
+          openProducts={this.openProducts}
+          openFrontPage={this.openFrontPage}
+          openAbout={this.openAbout}
+        />
         {showProducts ? (
-          <ProductGrid 
-          products={productList}
-          stolPic={stolPic} />
+          <ProductGrid products={productList} stolPic={stolPic} />
         ) : showSignIn ? (
           <SignIn />
         ) : showSignUp ? (
           <SignUp />
-        ) : (
-          <FrontPage 
+        ) : showAbout ? (
+          <AboutUs 
           woodshopPic={woodshopPic}
-          windowPic={windowPic}
-          sundeckPic={sundeckPic}
-          furniturePic={furniturePic}
+          furniturePic={furniturePic} />
+        ) : (
+          <FrontPage
+            woodshopPic={woodshopPic}
+            windowPic={windowPic}
+            sundeckPic={sundeckPic}
+            furniturePic={furniturePic}
           />
         )}
         <Footer />
