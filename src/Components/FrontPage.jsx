@@ -13,7 +13,8 @@ const FrontPage = (props) => {
           />
         </div>
         <div className="col-8">
-          <h4 className="mt-4 ml-2">Ett företag med anor från svensk träindustri</h4>
+            <h4 className="mt-3 ml-2">Lundins Trähantverk</h4>
+          <h6 className="ml-2">Ett företag med anor från svensk träindustri</h6>
           <p className="ml-2">
             Duis eget volutpat augue. Proin laoreet massa sem, eget vestibulum
             leo fermentum non. Morbi quam lectus, eleifend et imperdiet quis,

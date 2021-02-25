@@ -43,7 +43,7 @@ const AboutUs = (props) => {
       </div>
       <hr />
       <div className="row">
-        <h2 className="ml-3">Elba Industri - Klassisk industri från landsbygden</h2>
+        <h2 className="ml-3">Elba Industri - Klassisk träindustri från landsbygden</h2>
       </div>
       <div className="row">
         <div className="col">

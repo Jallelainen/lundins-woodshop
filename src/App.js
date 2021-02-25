@@ -169,7 +169,7 @@ class App extends Component {
     } = this.state;
 
     return (
-      <div id="main-container">
+      <div className="container">
         <Header
           openProducts={this.openProducts}
           openFrontPage={this.openFrontPage}

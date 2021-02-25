@@ -11,7 +11,7 @@ const Footer = () => {
           className="mb-0 pl-3 pr-3 py-4 bg-dark text-white-50 fixed-bottom"
           
         >
-          &copy; Lundin Trähantverk {year}{" "}
+          &copy; Lundins Trähantverk {year}{" "}
         </h5>
       </div>
     </div>

@@ -5,7 +5,7 @@ const Header = (props) => {
     <div className="row">
       <nav className="navbar navbar-expand-sm bg-dark shadow mb-4 navbar-dark d-inline-flex fixed-top">
         <a className="navbar-brand" id="navBrand" href="#" onClick={() => props.openFrontPage()} >
-          <h2>Lundin Trähantverk</h2>
+          <h2>Lundins Trähantverk</h2>
         </a>
         <ul className="navbar-nav">
           <li className="nav-item">
