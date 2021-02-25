@@ -48,7 +48,7 @@ const FrontPage = (props) => {
         <div className="col">
           <img className="mx-auto d-block rounded-circle shadow mb-4 bg-light" id="circlePics" src={props.sundeckPic} alt="Renovation" />
           <p className="text-center">
-            Vi utför gärna mindre byggnadsprojekt. Tveka inte att kontakta oss!
+            Vi utför gärna mindre byggnadsprojekt. Tveka inte att kontakta oss på 070-123 45 56!
           </p>
         </div>
       </div>

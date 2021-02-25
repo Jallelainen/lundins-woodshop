@@ -1,9 +1,9 @@
 .spacer {
-  margin: 45px;
+  height: 100px;
 }
 
-.nav-item a:hover{  
-    cursor: pointer 
+.nav-item, .navbar-brand a:hover {
+  cursor: pointer;
 }
 
 #woodshopPic {

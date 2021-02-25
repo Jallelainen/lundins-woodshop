@@ -114,6 +114,24 @@ class App extends Component {
     this.setState({});
   };
 
+  openSignIn = () => {
+    this.setState({
+      showProducts: false,
+      showSignUp: false,
+      showAbout: false,
+      showSignIn: true,
+    })
+  }
+
+  openSignUp = () => {
+    this.setState({
+      showProducts: false,
+      showSignIn: false,
+      showAbout: false,
+      showSignUp: true,
+    })
+  }
+
   openAbout = () => {
     this.setState({
       showProducts: false,
@@ -156,13 +174,19 @@ class App extends Component {
           openProducts={this.openProducts}
           openFrontPage={this.openFrontPage}
           openAbout={this.openAbout}
+          openSignIn={this.openSignIn}
+          
         />
         {showProducts ? (
-          <ProductGrid products={productList} stolPic={stolPic} />
+          <ProductGrid 
+          products={productList} 
+          stolPic={stolPic} />
         ) : showSignIn ? (
-          <SignIn />
+          <SignIn 
+          openSignUp={this.openSignUp}/>
         ) : showSignUp ? (
-          <SignUp />
+          <SignUp 
+          openSignIn={this.openSignIn}/>
         ) : showAbout ? (
           <AboutUs 
           woodshopPic={woodshopPic}
