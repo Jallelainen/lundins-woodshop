@@ -27,9 +27,7 @@ const FrontPage = (props) => {
             vitae eros gravida, tempor lacinia sem finibus.
             eget dapibus. Praesent id mi odio. Praesent vestibulum efficitur
             elit, ut volutpat metus tincidunt et. In in ante sit amet nisl
-            convallis placerat. Sed sagittis eget augue. Quisque aliquet nisi
-            vitae eros gravida, tempor lacinia sem finibus.
-            eget dapibus. 
+            convallis placerat.
           </p>
         </div>
       </div>

@@ -13,6 +13,8 @@ import FrontPage from "./Components/FrontPage";
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/SignUp";
 import AboutUs from "./Components/AboutUs";
+import ContactUs from "./Components/ContactUs";
+import ShoppingCart from "./Components/ShoppingCart";
 
 class App extends Component {
   state = {
@@ -107,10 +109,12 @@ class App extends Component {
     showSignUp: false,
     showProducts: false,
     showAbout: false,
+    showContact: false
   };
 
   addToCart = (event) => {
     const product = event.target;
+
     this.setState({});
   };
 
@@ -119,6 +123,7 @@ class App extends Component {
       showProducts: false,
       showSignUp: false,
       showAbout: false,
+      showContact: false,
       showSignIn: true,
     })
   }
@@ -128,7 +133,18 @@ class App extends Component {
       showProducts: false,
       showSignIn: false,
       showAbout: false,
+      showContact: false,
       showSignUp: true,
+    })
+  }
+
+  openContact = () => {
+    this.setState({
+      showProducts: false,
+      showSignIn: false,
+      showAbout: false,
+      showSignUp: false,
+      showContact: true,
     })
   }
 
@@ -137,6 +153,7 @@ class App extends Component {
       showProducts: false,
       showSignIn: false,
       showSignUp: false,
+      showContact: false,
       showAbout: true,
     });
   };
@@ -146,6 +163,7 @@ class App extends Component {
       showSignIn: false,
       showSignUp: false,
       showAbout: false,
+      showContact: false,
       showProducts: true,
     });
   };
@@ -156,16 +174,19 @@ class App extends Component {
       showSignIn: false,
       showSignUp: false,
       showAbout: false,
+      showContact: false
     });
   };
 
   render() {
     const {
       productList,
+      shoppingCart,
       showProducts,
       showSignIn,
       showSignUp,
       showAbout,
+      showContact
     } = this.state;
 
     return (
@@ -173,6 +194,7 @@ class App extends Component {
         <Header
           openProducts={this.openProducts}
           openFrontPage={this.openFrontPage}
+          openContact={this.openContact}
           openAbout={this.openAbout}
           openSignIn={this.openSignIn}
           
@@ -189,8 +211,10 @@ class App extends Component {
           openSignIn={this.openSignIn}/>
         ) : showAbout ? (
           <AboutUs 
-          woodshopPic={woodshopPic}
-          furniturePic={furniturePic} />
+          woodshopPic={woodshopPic} />
+        ) : showContact ? (
+          <ContactUs
+          furniturePic={furniturePic}/>
         ) : (
           <FrontPage
             woodshopPic={woodshopPic}
@@ -199,7 +223,10 @@ class App extends Component {
             furniturePic={furniturePic}
           />
         )}
+        <ShoppingCart 
+        shoppingCart={shoppingCart}/>
         <Footer />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
       </div>
     );
   }

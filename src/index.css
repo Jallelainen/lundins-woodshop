@@ -13,10 +13,22 @@
 
 #circlePics {
   width: 180px;
-  height: auto;
+  height: 120px;
 }
 
 #productPic {
   max-width: 100%;
   height: auto;
+}
+
+#shoppingCart{
+    position: fixed;
+    bottom: 40px;
+    right: -20px;
+}
+
+#shoppingCartBtn{
+    position: fixed;
+    bottom: 15%;
+    right: 5%;
 }

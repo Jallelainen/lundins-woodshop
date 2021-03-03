@@ -65,28 +65,6 @@ const AboutUs = (props) => {
           </p>
         </div>
       </div>
-      <hr />
-      <div className="row">
-        <h2 className="ml-3">Kontakt</h2>
-      </div>
-      <div className="row">
-        <div className="col-4">
-          <img
-            src={props.furniturePic}
-            id="productPic"
-            alt="Picture of Jonathan Lundin"
-          />
-        </div>
-        <div className="col-8">
-          <h4>Jonathan Lundin(VD)</h4>
-          <p>
-            <b>Telefon:</b> 070-123 45 67
-          </p>
-          <p>
-            <b>E-post:</b> jonathan.lundin@elbaindustri.se
-          </p>
-        </div>
-      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const ProductCard = (props) => {
 
     const Cards = props.products.map((product) => {
         return (
-            <div className="card shadow mb-4 bg-light">
+            <div className="card shadow mb-4 bg-light" key={product.Id}>
                 <img src={props.stolPic} id="productPic" alt="Product Image"/>
                 <div className="card-body">
                     <h3>{product.Name}</h3>

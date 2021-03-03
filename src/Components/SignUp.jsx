@@ -52,7 +52,7 @@ class SignUp extends Component {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Eftarnamn..."
+                placeholder="Efternamn..."
                 name="lastName"
                 id="lastName"
                 value={lastName}

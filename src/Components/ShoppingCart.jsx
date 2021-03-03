@@ -3,47 +3,71 @@ import React, { Component } from "react";
 class ShoppingCart extends Component {
   state = {
     shoppingCart: this.props.shoppingCart,
+    showCart: false,
   };
 
-  TableBody = (props) => {
-    const rows = props.shoppingCart.map((product) => {
-      return (
-        <tr>
-          <td>{product.Name}</td>
-          <td>{product.Quantity}</td>
-          <td>{product.Price}</td>
-        </tr>
-      );
-    });
-
-    return <tbody>{rows}</tbody>;
+  showCart = () => {
+    if (this.state.showCart === false) {
+      this.setState({ showCart: true });
+    } else {
+      this.setState({ showCart: false });
+    }
   };
 
   render() {
+    const { showCart } = this.state;
+
+    let itemCount = this.props.shoppingCart.length;
+    let tBodyContent;
+    if (this.props.shoppingCart.length > 0) {
+      tBodyContent = this.state.shoppingCart.map((product) => {
+        return (
+          <tr className=" d-flex">
+            <td className="mr-2 d-flex-fill">{product.Name}</td>
+            <td className="mr-2 d-flex-fill">{product.Quantity}</td>
+            <td className="mr-2 d-flex-fill">{product.Price}</td>
+          </tr>
+        );
+      });
+    } else {
+      tBodyContent = (
+        <tr >
+          <td rowSpan="3">Varukorgen är tom</td>
+        </tr>
+      );
+    }
+
     return (
-      <div className="container flex-end fixed-bottom m-5">
-        <div className="row-fluid">
-          <div className="col">
-            <h5>Varukorg</h5>
+      <div className="container">
+        { showCart ? (<div className="m-5 p-2 shadow bg-light dropup" id="shoppingCart">
+          <div className="row-fluid">
+            <div className="col">
+              <h5>Varukorg</h5>
+            </div>
           </div>
-        </div>
-        <div className="row-fluid">
-          <div className="col">
-            <table>
-              <thead>
-                <tr>
-                  <th>Namn:</th>
-                  <th>Antal:</th>
-                  <th>Pris:</th>
-                </tr>
-              </thead>
-              <TableBody shoppingCart={shoppingCart} />
-            </table>
+          <div className="row-fluid">
+            <div className="col">
+              <table className="mb-2 border p-2">
+                <thead>
+                  <tr className="d-flex">
+                    <th className="mr-2 d-flex-fill">Namn:</th>
+                    <th className="mr-2 d-flex-fill">Antal:</th>
+                    <th className="mr-2 d-flex-fill">Pris:</th>
+                  </tr>
+                </thead>
+                <tbody>{tBodyContent}</tbody>
+              </table>
+            </div>
           </div>
-        </div>
-        <div className="row-fluid">
-          <div className="col"></div>
-        </div>
+          <div className="row-fluid">
+            <div className="col">
+              <button className="btn-sm btn-outline-primary ml-1">Gå vidare</button>
+              <button className="btn-sm btn-outline-secondary ml-1" onClick={this.showCart}>Stäng</button>
+            </div>
+          </div>
+        </div>) 
+        : 
+        ( <button className="btn btn-outline-primary shadow" id="shoppingCartBtn" onClick={this.showCart}>Varukorg<span className="badge badge-dark ml-2">{itemCount}</span> </button> )}
       </div>
     );
   }

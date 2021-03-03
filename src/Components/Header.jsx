@@ -19,8 +19,8 @@ const Header = (props) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Beställa
+            <a className="nav-link" href="#" onClick={() => props.openContact()}>
+              Kontakta oss
             </a>
           </li>
           <li className="nav-item">
