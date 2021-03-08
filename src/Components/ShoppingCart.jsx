@@ -19,6 +19,7 @@ class ShoppingCart extends Component {
 
     let itemCount = this.props.shoppingCart.length;
     let tBodyContent;
+
     if (this.props.shoppingCart.length > 0) {
       tBodyContent = this.state.shoppingCart.map((product) => {
         return (
@@ -31,43 +32,57 @@ class ShoppingCart extends Component {
       });
     } else {
       tBodyContent = (
-        <tr >
-          <td rowSpan="3">Varukorgen är tom</td>
+        <tr>
+          <td className="text-center" rowSpan="3">Varukorgen är tom</td>
         </tr>
       );
     }
 
     return (
       <div className="container">
-        { showCart ? (<div className="m-5 p-2 shadow bg-light dropup" id="shoppingCart">
-          <div className="row-fluid">
-            <div className="col">
-              <h5>Varukorg</h5>
+        {showCart ? (
+          <div className="m-5 p-2 shadow bg-dark text-light rounded-sm" id="shoppingCart">
+            <div className="row-fluid">
+              <div className="col text-center">
+                <h5>Varukorg</h5>
+              </div>
+            </div>
+            <div className="row-fluid">
+              <div className="col">
+                <table className="mb-2 p-2">
+                  <thead>
+                    <tr className="d-flex">
+                      <th className="mr-2 d-flex-fill">Namn:</th>
+                      <th className="mr-2 d-flex-fill">Antal:</th>
+                      <th className="mr-2 d-flex-fill">Pris:</th>
+                    </tr>
+                  </thead>
+                  <tbody>{tBodyContent}</tbody>
+                </table>
+              </div>
+            </div>
+            <div className="row-fluid ">
+              <div className="col text-center">
+                <button className="btn-sm btn-outline-success mr-2">
+                  Gå vidare
+                </button>
+                <button
+                  className="btn-sm btn-outline-danger"
+                  onClick={this.showCart}
+                >
+                  Stäng
+                </button>
+              </div>
             </div>
           </div>
-          <div className="row-fluid">
-            <div className="col">
-              <table className="mb-2 border p-2">
-                <thead>
-                  <tr className="d-flex">
-                    <th className="mr-2 d-flex-fill">Namn:</th>
-                    <th className="mr-2 d-flex-fill">Antal:</th>
-                    <th className="mr-2 d-flex-fill">Pris:</th>
-                  </tr>
-                </thead>
-                <tbody>{tBodyContent}</tbody>
-              </table>
-            </div>
-          </div>
-          <div className="row-fluid">
-            <div className="col">
-              <button className="btn-sm btn-outline-primary ml-1">Gå vidare</button>
-              <button className="btn-sm btn-outline-secondary ml-1" onClick={this.showCart}>Stäng</button>
-            </div>
-          </div>
-        </div>) 
-        : 
-        ( <button className="btn btn-outline-primary shadow" id="shoppingCartBtn" onClick={this.showCart}>Varukorg<span className="badge badge-dark ml-2">{itemCount}</span> </button> )}
+        ) : (
+          <button
+            className="btn btn-outline-primary shadow"
+            id="shoppingCartBtn"
+            onClick={this.showCart}>
+            Varukorg<span className="badge badge-dark ml-2">{itemCount}</span>{" "}
+          </button>
+        )}
       </div>
     );
   }

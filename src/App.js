@@ -63,42 +63,42 @@ class App extends Component {
       },
       {
         Id: 6,
-        Name: "Trästol",
+        Name: "Hatthylla",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 2400,
       },
       {
         Id: 7,
-        Name: "Matbord",
+        Name: "Garderob",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 2100,
       },
       {
         Id: 8,
-        Name: "Gungstol",
+        Name: "Bordslampa",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 3300,
       },
       {
         Id: 9,
-        Name: "Spegel",
+        Name: "Dörrgavel",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 890,
       },
       {
         Id: 10,
-        Name: "Träbänk",
+        Name: "Dalahäst",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 2399,
       },
       {
         Id: 11,
-        Name: "Handräcke",
+        Name: "Trälist",
         Description:
           "En fin handtillverkad trästol i gustaviansk stil med robust finish. Tillverkad i ek",
         Price: 240,
@@ -109,11 +109,13 @@ class App extends Component {
     showSignUp: false,
     showProducts: false,
     showAbout: false,
-    showContact: false
+    showContact: false,
   };
 
-  addToCart = (event) => {
-    const product = event.target;
+  addToCart = (props) => {
+    console.log(props);
+    const { value } = props;
+    let i;
 
     this.setState({});
   };
@@ -125,8 +127,8 @@ class App extends Component {
       showAbout: false,
       showContact: false,
       showSignIn: true,
-    })
-  }
+    });
+  };
 
   openSignUp = () => {
     this.setState({
@@ -135,8 +137,8 @@ class App extends Component {
       showAbout: false,
       showContact: false,
       showSignUp: true,
-    })
-  }
+    });
+  };
 
   openContact = () => {
     this.setState({
@@ -145,8 +147,8 @@ class App extends Component {
       showAbout: false,
       showSignUp: false,
       showContact: true,
-    })
-  }
+    });
+  };
 
   openAbout = () => {
     this.setState({
@@ -174,7 +176,7 @@ class App extends Component {
       showSignIn: false,
       showSignUp: false,
       showAbout: false,
-      showContact: false
+      showContact: false,
     });
   };
 
@@ -186,7 +188,7 @@ class App extends Component {
       showSignIn,
       showSignUp,
       showAbout,
-      showContact
+      showContact,
     } = this.state;
 
     return (
@@ -197,24 +199,21 @@ class App extends Component {
           openContact={this.openContact}
           openAbout={this.openAbout}
           openSignIn={this.openSignIn}
-          
         />
         {showProducts ? (
-          <ProductGrid 
-          products={productList} 
-          stolPic={stolPic} />
+          <ProductGrid
+            products={productList}
+            stolPic={stolPic}
+            addToCart={this.addToCart}
+          />
         ) : showSignIn ? (
-          <SignIn 
-          openSignUp={this.openSignUp}/>
+          <SignIn openSignUp={this.openSignUp} />
         ) : showSignUp ? (
-          <SignUp 
-          openSignIn={this.openSignIn}/>
+          <SignUp openSignIn={this.openSignIn} />
         ) : showAbout ? (
-          <AboutUs 
-          woodshopPic={woodshopPic} />
+          <AboutUs woodshopPic={woodshopPic} />
         ) : showContact ? (
-          <ContactUs
-          furniturePic={furniturePic}/>
+          <ContactUs furniturePic={furniturePic} />
         ) : (
           <FrontPage
             woodshopPic={woodshopPic}
@@ -223,10 +222,14 @@ class App extends Component {
             furniturePic={furniturePic}
           />
         )}
-        <ShoppingCart 
-        shoppingCart={shoppingCart}/>
+        <ShoppingCart shoppingCart={shoppingCart} />
         <Footer />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"/>
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+          crossorigin="anonymous"
+        />
       </div>
     );
   }
